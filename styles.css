@@ -1,52 +1,79 @@
-const yearEl = document.getElementById("year");
-if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-const hamburger = document.getElementById("hamburger");
-const mobileMenu = document.getElementById("mobileMenu");
-
-function toggleMenu() {
-  const expanded = hamburger.getAttribute("aria-expanded") === "true";
-  hamburger.setAttribute("aria-expanded", String(!expanded));
-  mobileMenu.style.display = expanded ? "none" : "block";
-  mobileMenu.setAttribute("aria-hidden", String(expanded));
+:root{
+  --bg:#071b33;
+  --bg2:#0a2f56;
+  --primary:#14b7ff;
+  --primary2:#2bd3ff;
+  --white:#ffffff;
+  --text:#0e1b2b;
+  --muted:#6b7a90;
+  --card:#ffffff;
+  --soft:#f5f9ff;
+  --shadow: 0 18px 50px rgba(0,0,0,.18);
+  --shadow2: 0 10px 25px rgba(0,0,0,.10);
+  --radius:18px;
+  --radius2:26px;
+  --max:1120px;
 }
 
-if (hamburger) hamburger.addEventListener("click", toggleMenu);
-
-document.querySelectorAll(".mobile__link, .btn--full").forEach((a) => {
-  a.addEventListener("click", () => {
-    if (window.innerWidth <= 700) {
-      hamburger.setAttribute("aria-expanded", "false");
-      mobileMenu.style.display = "none";
-      mobileMenu.setAttribute("aria-hidden", "true");
-    }
-  });
-});
-
-function handleSubmit(e){
-  e.preventDefault();
-  const form = e.target;
-  const nombre = encodeURIComponent(form.nombre.value.trim());
-  const telefono = encodeURIComponent(form.telefono.value.trim());
-  const motivo = encodeURIComponent(form.motivo.value);
-  const mensaje = encodeURIComponent((form.mensaje.value || "").trim());
-
-  const text =
-    `Hola Dental El Dorado,%0A` +
-    `Deseo agendar una cita.%0A%0A` +
-    `Nombre: ${nombre}%0A` +
-    `Teléfono: ${telefono}%0A` +
-    `Motivo: ${motivo}%0A` +
-    (mensaje ? `Mensaje: ${mensaje}%0A` : "");
-
-  window.open(`https://wa.me/51950298305?text=${text}`, "_blank");
-  return false;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  color:var(--text);
+  background:#f5f9ff;
 }
 
-function handleNewsletter(e){
-  e.preventDefault();
-  const email = encodeURIComponent(e.target.email.value.trim());
-  alert("¡Gracias! Suscripción registrada: " + decodeURIComponent(email));
-  e.target.reset();
-  return false;
+.container{max-width:var(--max);margin:0 auto;padding:0 18px}
+
+/* ============ TOPBAR ============ */
+.topbar{
+  background:linear-gradient(90deg, #0b5aa8, #0b82c9);
+  color:#eaf6ff;
+  font-size:13px;
+}
+.topbar__inner{display:flex;gap:16px;align-items:center;padding:10px 0;flex-wrap:wrap}
+.topbar__item{display:flex;align-items:center;gap:8px;opacity:.95}
+.topbar__item--right{margin-left:auto;gap:10px}
+.topbar__link{color:#fff;text-decoration:none;font-weight:600}
+
+/* ============ HEADER ============ */
+.header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.92);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid rgba(10,30,60,.08);
+}
+.header__inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
+.brand__name{font-weight:800}
+
+/* ============ HERO ============ */
+.hero{
+  padding:60px 0;
+  background:linear-gradient(135deg,#e8f4ff,#ffffff);
+}
+.hero h1{
+  font-size:46px;
+  margin-bottom:12px;
+}
+.hero__lead{font-size:17px;max-width:650px}
+
+/* ============ BUTTONS ============ */
+.btn{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--primary),var(--primary2));
+  color:#05304b;
+  font-weight:800;
+  text-decoration:none;
+  box-shadow: var(--shadow2);
+}
+
+/* ============ FOOTER ============ */
+.footer{
+  background:linear-gradient(180deg,#082547,#061a33);
+  color:#eaf6ff;
+  padding:30px 0;
 }
