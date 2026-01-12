@@ -1,0 +1,52 @@
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+function toggleMenu() {
+  const expanded = hamburger.getAttribute("aria-expanded") === "true";
+  hamburger.setAttribute("aria-expanded", String(!expanded));
+  mobileMenu.style.display = expanded ? "none" : "block";
+  mobileMenu.setAttribute("aria-hidden", String(expanded));
+}
+
+if (hamburger) hamburger.addEventListener("click", toggleMenu);
+
+document.querySelectorAll(".mobile__link, .btn--full").forEach((a) => {
+  a.addEventListener("click", () => {
+    if (window.innerWidth <= 700) {
+      hamburger.setAttribute("aria-expanded", "false");
+      mobileMenu.style.display = "none";
+      mobileMenu.setAttribute("aria-hidden", "true");
+    }
+  });
+});
+
+function handleSubmit(e){
+  e.preventDefault();
+  const form = e.target;
+  const nombre = encodeURIComponent(form.nombre.value.trim());
+  const telefono = encodeURIComponent(form.telefono.value.trim());
+  const motivo = encodeURIComponent(form.motivo.value);
+  const mensaje = encodeURIComponent((form.mensaje.value || "").trim());
+
+  const text =
+    `Hola Dental El Dorado,%0A` +
+    `Deseo agendar una cita.%0A%0A` +
+    `Nombre: ${nombre}%0A` +
+    `Teléfono: ${telefono}%0A` +
+    `Motivo: ${motivo}%0A` +
+    (mensaje ? `Mensaje: ${mensaje}%0A` : "");
+
+  window.open(`https://wa.me/51950298305?text=${text}`, "_blank");
+  return false;
+}
+
+function handleNewsletter(e){
+  e.preventDefault();
+  const email = encodeURIComponent(e.target.email.value.trim());
+  alert("¡Gracias! Suscripción registrada: " + decodeURIComponent(email));
+  e.target.reset();
+  return false;
+}
