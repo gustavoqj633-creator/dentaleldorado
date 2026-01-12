@@ -1,77 +1,373 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Dental El Dorado</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-<style>
-body{margin:0;font-family:'Poppins',sans-serif;background:#f4f7fb;color:#222}
-header{background:#0a3d62;color:#fff;padding:50px 20px;text-align:center}
-header img{max-width:180px;margin-bottom:15px}
-header h1{margin:0;font-size:2.2em}
-header p{font-size:1.05em}
-
-section{padding:60px 20px;max-width:1100px;margin:auto}
-h2{text-align:center;color:#0a3d62;margin-bottom:40px}
-
-.services,.benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{background:#fff;padding:25px;border-radius:14px;box-shadow:0 12px 25px rgba(0,0,0,.08)}
-
-.btn{background:#25d366;color:#fff;padding:14px 30px;border-radius:50px;text-decoration:none;font-weight:600;display:inline-block;margin-top:20px}
-
-footer{background:#0a3d62;color:#fff;text-align:center;padding:30px}
-
-.whatsapp{position:fixed;bottom:20px;right:20px}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dental El Dorado | Centro Odontológico</title>
+  <meta name="description" content="Dental El Dorado: atención odontológica integral desde 1994. Tecnología digital, atención domingos y feriados con previa cita. Av. Arenales 971, Lima." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__item">
+        <span class="dot"></span>
+        Lun–Sáb: 9:00 am – 8:00 pm
+      </div>
+      <div class="topbar__item">
+        <span class="dot"></span>
+        Domingos y feriados: <strong>Prev. cita</strong>
+      </div>
+      <div class="topbar__item topbar__item--right">
+        <a class="topbar__link" href="tel:+51950298305">📞 +51 950 298 305</a>
+        <span class="sep">|</span>
+        <span class="pin">📍</span> Av. Arenales 971, Santa Beatriz, Lima
+      </div>
+    </div>
+  </div>
 
-<header>
-<img src="logo.jpg" alt="Dental El Dorado">
-<h1>Dental El Dorado</h1>
-<p>Sonrisas saludables con tecnología dental avanzada</p>
-<a class="btn" href="https://wa.me/51950298305">Agenda tu cita</a>
-</header>
+  <!-- Header -->
+  <header class="header" id="inicio">
+    <div class="container header__inner">
+      <a class="brand" href="#inicio" aria-label="Dental El Dorado">
+        <div class="brand__mark">🦷</div>
+        <div class="brand__text">
+          <div class="brand__name">EL DORADO</div>
+          <div class="brand__sub">Centro Odontológico</div>
+        </div>
+      </a>
 
-<section>
-<h2>Nuestros Servicios</h2>
-<div class="services">
-<div class="card">Implantes dentales</div>
-<div class="card">Coronas de zirconio</div>
-<div class="card">Ortodoncia</div>
-<div class="card">Rehabilitación oral</div>
-<div class="card">Estética dental</div>
-<div class="card">Blanqueamiento dental</div>
-</div>
-</section>
+      <nav class="nav" aria-label="Principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#convenios">Convenios Corporativos</a>
+        <a class="btn btn--small" href="#agendar">Agenda tu cita</a>
+      </nav>
 
-<section>
-<h2>¿Por qué elegir Dental El Dorado?</h2>
-<div class="benefits">
-<div class="card">✔ Especialistas con amplia experiencia</div>
-<div class="card">✔ Tecnología digital y diagnóstico preciso</div>
-<div class="card">✔ Atención personalizada y humana</div>
-<div class="card">✔ Ubicación céntrica y accesible</div>
-</div>
-</section>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
 
-<section>
-<h2>Ubicación</h2>
-<p style="text-align:center">Av. Arenales 971, Santa Beatriz – Lima</p>
-<p style="text-align:center">Tel: 950 298 305</p>
-</section>
+    <!-- Mobile menu -->
+    <div class="mobile" id="mobileMenu" aria-hidden="true">
+      <div class="container mobile__inner">
+        <a href="#inicio" class="mobile__link">Inicio</a>
+        <a href="#nosotros" class="mobile__link">Nosotros</a>
+        <a href="#servicios" class="mobile__link">Servicios</a>
+        <a href="#convenios" class="mobile__link">Convenios Corporativos</a>
+        <a href="#agendar" class="btn btn--full">Agenda tu cita</a>
+      </div>
+    </div>
+  </header>
 
-<footer>
-<p>© 2026 Dental El Dorado</p>
-</footer>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <p class="badge">Excelencia en salud dental desde 1994</p>
+        <h1>Lo mejor en <span>Odontología</span> & <span>Sonrisas</span></h1>
+        <p class="hero__lead">
+          Atención integral con especialistas, tecnología digital (CAD/CAM) y un enfoque humano.
+          Atendemos <strong>los 7 días</strong> (domingos y feriados con previa cita).
+        </p>
+        <div class="hero__actions">
+          <a class="btn" href="#agendar">Agendar mi cita</a>
+          <a class="btn btn--ghost" href="#servicios">Ver tratamientos</a>
+        </div>
 
-<a class="whatsapp" href="https://wa.me/51950298305">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="60">
-</a>
+        <div class="hero__trust">
+          <div class="trust__item"><strong>+30</strong><span>Años de experiencia</span></div>
+          <div class="trust__item"><strong>Equipo</strong><span>Multidisciplinario</span></div>
+          <div class="trust__item"><strong>Digital</strong><span>Precisión y confort</span></div>
+        </div>
+      </div>
 
+      <div class="hero__card">
+        <div class="card">
+          <h3>¿Necesitas atención hoy?</h3>
+          <p>Escríbenos por WhatsApp y agenda en minutos.</p>
+          <a class="btn btn--whatsapp" target="_blank" rel="noopener"
+             href="https://wa.me/51950298305?text=Hola%20Dental%20El%20Dorado,%20deseo%20agendar%20una%20cita.%20">
+            WhatsApp: +51 950 298 305
+          </a>
+          <div class="divider"></div>
+          <p class="small">
+            Dirección: Av. Arenales 971, Santa Beatriz, Lima.<br/>
+            Domingos/Feriados: previa cita.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nosotros -->
+  <section class="section" id="nosotros">
+    <div class="container">
+      <div class="section__head">
+        <h2>Nosotros</h2>
+        <p>
+          En Dental El Dorado combinamos experiencia clínica, tecnología y un trato cercano,
+          para que cada paciente reciba resultados seguros, estéticos y duraderos.
+        </p>
+      </div>
+
+      <div class="grid two">
+        <div class="panel">
+          <h3>Historia & Misión</h3>
+          <p>
+            Desde <strong>1994</strong>, Dental El Dorado es sinónimo de confianza y calidad.
+            Nacimos con la visión de ser una alternativa dental integral, reuniendo especialidades y
+            tecnología de vanguardia para una atención de alto nivel.
+          </p>
+          <p>
+            Nuestra misión es brindar <strong>soluciones completas y personalizadas</strong>,
+            mejorando la salud bucal y la calidad de vida de cada paciente.
+          </p>
+          <ul class="list">
+            <li><span class="check">✓</span> Protocolos y atención personalizada</li>
+            <li><span class="check">✓</span> Odontología digital (CAD/CAM)</li>
+            <li><span class="check">✓</span> Enfoque integral: prevención a rehabilitación</li>
+          </ul>
+        </div>
+
+        <div class="panel panel--highlight">
+          <h3>Nuestro Equipo</h3>
+          <p>Atención integral con especialistas:</p>
+          <div class="chips">
+            <span>Odontología general</span>
+            <span>Ortodoncia</span>
+            <span>Implantología</span>
+            <span>Rehabilitación oral</span>
+            <span>Cirugía maxilofacial</span>
+          </div>
+
+          <div class="mini">
+            <div class="mini__box">
+              <h4>Lo que nos distingue</h4>
+              <p>
+                Atención los <strong>7 días</strong>, tecnología digital y un equipo multidisciplinario para
+                resolver desde lo simple hasta lo complejo en un solo lugar.
+              </p>
+            </div>
+            <div class="mini__box">
+              <h4>Visión</h4>
+              <p>
+                Seguir liderando la atención dental, incorporando innovaciones y fortaleciendo convenios
+                corporativos para llegar a más personas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section class="section section--soft" id="servicios">
+    <div class="container">
+      <div class="section__head">
+        <h2>Servicios</h2>
+        <p>Tratamientos modernos, cómodos y con resultados estéticos. Elige el que necesitas:</p>
+      </div>
+
+      <div class="cards">
+        <article class="svc">
+          <h3>Brackets personalizados</h3>
+          <p>Ortodoncia a tu medida para alinear dientes, mejorar mordida y estética con mayor confort.</p>
+        </article>
+
+        <article class="svc">
+          <h3>Dientes sensibles</h3>
+          <p>Tratamiento especializado para reducir sensibilidad y recuperar el placer de comer sin molestias.</p>
+        </article>
+
+        <article class="svc">
+          <h3>Blanqueamiento profesional</h3>
+          <p>Ilumina tu sonrisa con un procedimiento seguro, rápido y con resultados visibles.</p>
+        </article>
+
+        <article class="svc">
+          <h3>Endodoncia de precisión</h3>
+          <p>Alivio del dolor y conservación del diente con técnicas modernas y enfoque mínimamente invasivo.</p>
+        </article>
+
+        <article class="svc">
+          <h3>Implantes dentales</h3>
+          <p>Reemplazo fijo y duradero para dientes perdidos con planificación digital y excelente estética.</p>
+        </article>
+
+        <article class="svc">
+          <h3>Carillas dentales</h3>
+          <p>Transforma tu sonrisa en pocas sesiones con diseño digital y materiales de alta calidad.</p>
+        </article>
+
+        <article class="svc">
+          <h3>Resinas estéticas premium</h3>
+          <p>Restauraciones naturales, resistentes y casi invisibles para una sonrisa armoniosa.</p>
+        </article>
+
+        <article class="svc">
+          <h3>Coronas de zirconio</h3>
+          <p>Máxima resistencia y estética con precisión digital. Ideal para rehabilitaciones duraderas.</p>
+        </article>
+
+        <article class="svc">
+          <h3>Coronas de silicato</h3>
+          <p>Naturalidad y durabilidad en restauraciones estéticas, especialmente en zona anterior.</p>
+        </article>
+
+        <article class="svc svc--wide">
+          <h3>Profilaxis con ultrasonido</h3>
+          <p>
+            Limpieza profunda que elimina placa y sarro de forma cómoda y eficiente. Ayuda a prevenir
+            caries, gingivitis y enfermedad periodontal. Recomendado cada <strong>6 meses</strong>.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Convenios -->
+  <section class="section" id="convenios">
+    <div class="container">
+      <div class="section__head">
+        <h2>Convenios Corporativos</h2>
+        <p>
+          Bienestar bucal para colaboradores y familias. Un equipo con sonrisas saludables es un equipo más fuerte.
+        </p>
+      </div>
+
+      <div class="grid two">
+        <div class="panel">
+          <h3>¿Qué ofrecemos a tu empresa?</h3>
+          <ul class="list">
+            <li><span class="check">✓</span> Evaluación in situ (en la empresa)</li>
+            <li><span class="check">✓</span> Tarifas preferenciales para colaboradores y familiares</li>
+            <li><span class="check">✓</span> Facilidades de pago (incluye descuento por nómina si aplica)</li>
+            <li><span class="check">✓</span> Evaluación inicial y presupuesto sin costo</li>
+            <li><span class="check">✓</span> Atención centralizada en nuestra sede moderna</li>
+            <li><span class="check">✓</span> Promociones y sorteos exclusivos</li>
+          </ul>
+        </div>
+
+        <div class="panel panel--highlight">
+          <h3>Beneficios para tu organización</h3>
+          <ul class="list">
+            <li><span class="check">✓</span> Mejora del bienestar y satisfacción del personal</li>
+            <li><span class="check">✓</span> Menos ausentismo por urgencias dentales</li>
+            <li><span class="check">✓</span> Fortalece el paquete de beneficios</li>
+            <li><span class="check">✓</span> Prevención y cultura de salud</li>
+          </ul>
+          <a class="btn" href="#agendar">Solicitar información</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA + Form -->
+  <section class="section section--cta" id="agendar">
+    <div class="container cta">
+      <div class="cta__copy">
+        <h2>Agenda tu cita hoy</h2>
+        <p>
+          Cuéntanos qué necesitas y te ayudamos a elegir el tratamiento ideal.
+          Respuesta rápida por WhatsApp.
+        </p>
+        <div class="cta__actions">
+          <a class="btn btn--whatsapp" target="_blank" rel="noopener"
+             href="https://wa.me/51950298305?text=Hola%20Dental%20El%20Dorado,%20deseo%20agendar%20una%20cita.%20">
+            Agendar por WhatsApp
+          </a>
+          <a class="btn btn--ghost" href="tel:+51950298305">Llamar ahora</a>
+        </div>
+      </div>
+
+      <form class="form" onsubmit="return handleSubmit(event)">
+        <h3>Solicitud de cita</h3>
+        <label>
+          Nombre
+          <input required name="nombre" placeholder="Tu nombre completo" />
+        </label>
+        <label>
+          Teléfono / WhatsApp
+          <input required name="telefono" placeholder="Ej. 950 298 305" />
+        </label>
+        <label>
+          Motivo de consulta
+          <select name="motivo">
+            <option>Evaluación general</option>
+            <option>Ortodoncia</option>
+            <option>Blanqueamiento</option>
+            <option>Carillas</option>
+            <option>Implantes</option>
+            <option>Endodoncia</option>
+            <option>Dolor / Urgencia</option>
+          </select>
+        </label>
+        <label>
+          Mensaje (opcional)
+          <textarea name="mensaje" rows="3" placeholder="Cuéntanos brevemente tu caso"></textarea>
+        </label>
+        <button class="btn btn--full" type="submit">Enviar</button>
+        <p class="small muted">Al enviar, se abrirá WhatsApp con el mensaje listo para enviar.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer / Newsletter -->
+  <footer class="footer">
+    <div class="newsletter">
+      <div class="container newsletter__inner">
+        <h3>Suscríbete a nuestro Boletín</h3>
+        <form class="newsletter__form" onsubmit="return handleNewsletter(event)">
+          <input required type="email" name="email" placeholder="Tu correo electrónico" />
+          <button class="btn btn--small" type="submit">Suscribirse</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <div class="brand__mark brand__mark--footer">🦷</div>
+        <div>
+          <div class="brand__name brand__name--footer">EL DORADO</div>
+          <div class="brand__sub brand__sub--footer">Centro Odontológico</div>
+        </div>
+      </div>
+
+      <div class="footer__links">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#convenios">Convenios Corporativos</a>
+      </div>
+
+      <div class="footer__hours">
+        <h4>Horario</h4>
+        <p><strong>Lunes a Sábados</strong><br/>9:00 am – 8:00 pm</p>
+        <p><strong>Domingos y Feriados</strong><br/>Previa cita</p>
+      </div>
+
+      <div class="footer__contact">
+        <h4>Contacto</h4>
+        <p><a href="tel:+51950298305">📞 +51 950 298 305</a></p>
+        <p>📍 Av. Arenales 971, Santa Beatriz, Lima</p>
+        <p class="muted">Redes: Facebook / Instagram (coloca tus links)</p>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> Dental El Dorado. Derechos Reservados.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
